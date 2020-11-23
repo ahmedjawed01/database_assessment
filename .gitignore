@@ -1,0 +1,15 @@
+__pycache__/
+.idea/
+.vscode/
+*.env
+*.sublime-project
+*.sublime-workspace
+*.swo
+*.swp
+staticfiles/
+
+Pipfile.lock
+.env
+.venv
+env/
+venv/

@@ -1,0 +1,8 @@
+BB Product Model:
+CREATE TABLE IF NOT EXISTS "bb_products_bbproduct" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "zip_code" varchar(6) NOT NULL, "product" varchar(255) NOT NULL, "recorded" date NOT NULL, "org_user" varchar(255) NOT NULL, "modified_user" varchar(255) NOT NULL);
+
+
+
+Population Model:
+
+CREATE TABLE IF NOT EXISTS "populations_population" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "zip_code" varchar(6) NOT NULL, "five_mile_pop" varchar(255) NOT NULL, "recorded" date NOT NULL, "org_user" varchar(255) NOT NULL, "modified_user" varchar(255) NOT NULL);

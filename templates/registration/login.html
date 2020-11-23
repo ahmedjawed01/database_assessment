@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="content-body">
+            <section class="container">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-10 box-shadow-2 p-0">
+                        <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                            <div class="card-header border-0">
+                                <div class="font-large-1  text-center">
+                                    User Login
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form class="form-horizontal" action="{% url 'login' %}" method="POST" novalidate>
+                                        {% csrf_token %}
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <label for="username">Username</label>
+                                            {{ form.username }}
+                                            {% if form.errors.username %}
+                                                <div class="text text-danger ml-1">
+                                                    <span>{{ form.errors.username }}</span>
+                                                </div>
+                                            {% endif %}
+                                            <div class="form-control-position">
+                                                <i class="ft-user"></i>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <label for="password">Password</label>
+
+                                            {{ form.password }}
+                                            <div class="form-control-position">
+                                                <i class="ft-lock"></i>
+                                            </div>
+                                        </fieldset>
+                                        <br>
+
+                                        <div class="form-group row">
+                                            <div class="col-md-6 col-12 text-center text-sm-left"></div>
+                                        </div>
+                                        {% if form.non_field_errors %}
+                                            <div class="text text-danger">
+                                                <span>{{ form.non_field_errors }}</span>
+                                            </div>
+                                        {% endif %}
+                                        <div class="form-group text-center">
+                                            <button type="submit"
+                                                    class="btn-primary btn-block btn-glow btn-bg-gradient-x-purple-blue col-12 mr-1 mb-1">
+                                                Login
+                                            </button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extrajs %}{% endblock %}
+
