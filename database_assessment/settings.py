@@ -56,14 +56,18 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-LOGIN_REQUIRED_IGNORE_VIEW_NAMES = ['login', 'logout']
+LOGIN_REQUIRED_IGNORE_VIEW_NAMES = ['login', 'logout', 'index', 'bb_login', 'pop_login']
 
 BB_PRODUCTS_VIEW_NAME = ['bb_product', ]
 POPULATIONS_VIEW_NAME = ['populations', ]
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/'
 LOGIN_REDIRECT_ADMIN_URL = '/admin/'
-LOGOUT_REDIRECT_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/'
+
+AUTHENTICATION_BACKENDS = [
+    'database_assessment.multi_database_backend.MultiDatabaseBackend'
+]
 
 SESSION_COOKIE_AGE = 60 * 60 * 60
 ROOT_URLCONF = 'database_assessment.urls'

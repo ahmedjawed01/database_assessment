@@ -13,13 +13,14 @@ class CustomLoginView(LoginView):
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
+            db = request.path
             user = authenticate(request=request, username=username, password=password)
             login(request, user)
-            if user.db_role == 0:
+            if db == '/login/':
                 return redirect('/admin/')
-            if user.db_role == 1:
+            if db == '/bb-product-login/':
                 return HttpResponseRedirect(reverse('bb_product'))
-            if user.db_role == 2:
+            if db == '/population-login/':
                 return HttpResponseRedirect(reverse('populations'))
         else:
             return self.form_invalid(form)

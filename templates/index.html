@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Import Export{% endblock %}
+{% block extracs %}
+    <style>
+        .btn-bb {
+            color: white;
+            background-color: #3b5998;
+        }
+
+        .btn-pop {
+            color: white;
+            background-color: #ea4335;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="app-content">
+        <div class="content-wrapper">
+            <div class="content-body">
+                <section class="container">
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-10 box-shadow-2 p-0">
+                            <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                                <div class="card-header border-0">
+                                    <div class="font-large-1  text-center">
+                                        Login Using
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="social-login">
+                                            <a href="{% url 'bb_login' %}" class="btn btn-lg btn-bb btn-block"
+                                                    type="submit"><i class="fab fa-google mr-2"></i> Sign in with BB Product
+                                            </a>
+                                            <a href="{% url 'pop_login' %}" class="btn btn-lg btn-pop btn-block"
+                                                    type="submit"> Sign in with
+                                                Population
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
